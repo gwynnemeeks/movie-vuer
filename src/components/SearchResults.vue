@@ -19,11 +19,12 @@
 </template>
 
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState, mapActions, mapGetters } from "vuex";
 
 export default {
   computed: {
     ...mapState(["searchResults", "searchTerm"]),
+    ...mapGetters(["viewableMovies"]),
   },
   methods: {
     ...mapActions(["selectMovie"]),
