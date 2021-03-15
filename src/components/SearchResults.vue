@@ -5,7 +5,7 @@
     </h3>
 
     <v-slide-group class="pb-5" show-arrows>
-      <v-slide-item v-for="movie in searchResults.results" :key="movie.id">
+      <v-slide-item v-for="movie in viewableMovies" :key="movie.id">
         <v-img
           @click="selectMovie(movie)"
           contain
