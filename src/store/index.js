@@ -21,6 +21,16 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    async searchMovies({ commit }, payload) {
+      const apiBaseUrl = "https://api.themoviedb.org/3";
+      const apiKey = process.env.VUE_APP_MOVIE_API_KEY;
+      const url = `${apiBaseUrl}/search/movie?query=${payload}&api_key=${apiKey}`;
+  
+      const res = await fetch(url);
+      const data = await res.json();
+      commit("setSearchTerm", payload);
+      commit("setSearchResults", data);
+    }
   },
   modules: {
   }
