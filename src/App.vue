@@ -1,25 +1,21 @@
 <template>
   <v-app>
-    <v-app-bar app color="purple" dark>
-      <h1>Movie Vuer</h1>
-      <form @submit.prevent="handleSubmit" style="background: white">
-        <input type="text" v-model="query" />
-      </form>
-    </v-app-bar>
+    <v-app-bar app color="purple" dark> </v-app-bar>
+
+    <v-main>
+      <v-container>
+        <search-results />
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <script>
+import SearchResults from "./components/SearchResults";
+
 export default {
-  data() {
-    return {
-      query: "",
-    };
-  },
-  methods: {
-    handleSubmit() {
-      console.log("Search for:", this.query);
-    },
+  components: {
+    SearchResults,
   },
 };
 </script>
