@@ -1,21 +1,32 @@
 <template>
   <v-app>
-    <v-app-bar app color="purple" dark> </v-app-bar>
-
+    <app-header />
     <v-main>
       <v-container>
         <search-results />
+        <v-row class="mt-6">
+          <v-col :sm="12" :md="6">
+            <movie-details />
+          </v-col>
+          <v-col :sm="12" :md="6">
+            <!-- Todo: REVIEWS GO HERE -->
+          </v-col>
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
 </template>
 
 <script>
+import AppHeader from "./components/AppHeader.vue";
+import MovieDetails from "./components/MovieDetails.vue";
 import SearchResults from "./components/SearchResults";
 
 export default {
   components: {
     SearchResults,
+    AppHeader,
+    MovieDetails,
   },
 };
 </script>
