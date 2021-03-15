@@ -1,13 +1,21 @@
 <template>
-  <div id="app">
-    <h1>Movie Vuer</h1>
-  </div>
+  <v-app>
+    <v-app-bar app color="purple" light> </v-app-bar>
+
+    <v-main>
+      <v-container>
+        <search-results />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>
+import SearchResults from "./components/SearchResults";
+
 export default {
-  data() {
-    return {};
+  components: {
+    SearchResults,
   },
 };
 </script>
