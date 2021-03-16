@@ -5,7 +5,7 @@
       <li v-for="review in reviews" :key="review.id">
         <p>{{ review.author_details.avatar_path }}</p>
         <p>{{ review.author }}</p>
-        <p>{{ review.created_at }}</p>
+        <p>{{ formatDate(review.created_at) }}</p>
         <p>{{ review.content }}</p>
       </li>
     </ul>
@@ -14,8 +14,10 @@
 
 <script>
 import { mapState } from "vuex";
+import { dateMixin } from "../mixins/movieMixins";
 
 export default {
+  mixins: [dateMixin],
   computed: {
     ...mapState(["reviews"]),
   },
