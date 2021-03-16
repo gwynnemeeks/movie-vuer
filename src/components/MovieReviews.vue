@@ -14,8 +14,10 @@
 
 <script>
 import { mapState } from "vuex";
+import { dateMixin } from "../mixins/movieMixins";
 
 export default {
+  mixins: [dateMixin],
   computed: {
     ...mapState(["reviews"]),
   },
